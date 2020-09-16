@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace MyRobotsVDinosaurs
 {
-    class Dinosaur
+    class Dinosaur : Warrior // (IS A WARRIOR)
     {
-        // member variables
+        // member variables (HAS A)
 
         public string type;
         public int health;
         public int energy;
-        public int attackPower;
 
-        // constructor
+        // constructor (SPAWN)
 
-        public Dinosaur()
+        public Dinosaur(string name)
+            :base(name) // Runs base constructor with name input, returns to finish constructing rest of dinosaur
         {
             type = "TRex";
             health = 100;
@@ -25,10 +25,11 @@ namespace MyRobotsVDinosaurs
             // attackPower = 10; (No longer necessary - attack power chosen from list of attacks)
         }
 
-        // member methods
+        // member methods (CAN DO)
 
         public void Attack(Robot robot)
         {
+            base.Attack(robot);
             Console.WriteLine($"Attacks:\n  1) Bite (deals 10 damage)\n  2) Stomp (deals 5 damage)");
             Console.Write("Choose your attack: ");
             string userInput = Console.ReadLine();

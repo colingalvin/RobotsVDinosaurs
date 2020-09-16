@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 
 namespace MyRobotsVDinosaurs
 {
-    class Weapon
+    class Warrior
     {
         // member variables (HAS A)
 
-        public string type;
-        public int attackPower;
+        public string name;
 
         // constructor (SPAWN)
 
-        public Weapon(string userInput, int attackPower)
+        public Warrior(string name)
         {
-            this.type = userInput;
-            this.attackPower = attackPower;
+            this.name = name;
         }
 
         // member methods (CAN DO)
+
+        public virtual void Attack(Warrior warrior)
+        {
+            Console.WriteLine($"{0} attacks {warrior}!", name);
+        }
     }
 }

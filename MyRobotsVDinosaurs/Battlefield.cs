@@ -8,11 +8,12 @@ namespace MyRobotsVDinosaurs
 {
     class Battlefield
     {
-        // member variables
+        // member variables (HAS A)
+
         public Herd herd;
         public Fleet fleet;
 
-        // constructor
+        // constructor (SPAWN)
 
         public Battlefield()
         {
@@ -20,7 +21,7 @@ namespace MyRobotsVDinosaurs
             fleet = new Fleet();
         }
 
-        // member methods
+        // member methods (CAN DO)
 
         public void DoBattle()
         {

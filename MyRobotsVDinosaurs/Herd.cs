@@ -6,24 +6,32 @@ using System.Threading.Tasks;
 
 namespace MyRobotsVDinosaurs
 {
-    class Herd
+    class Herd : Army // (IS AN ARMY)
     {
-        // member variables
+        // member variables (HAS A)
 
         public List<Dinosaur> dinosaurs = new List<Dinosaur>();
 
-        // constructor
+        // constructor (SPAWN)
 
         public Herd() // Contains list of 3 dinosaur objects
         {
-            Dinosaur dinosaur1 = new Dinosaur();
+            Console.Write("Enter the name of your first dinosaur: ");
+            string userInput = Console.ReadLine();
+            Dinosaur dinosaur1 = new Dinosaur(userInput);
             dinosaurs.Add(dinosaur1);
-            Dinosaur dinosaur2 = new Dinosaur();
+
+            Console.Write("Enter the name of your second dinosaur: ");
+            userInput = Console.ReadLine();
+            Dinosaur dinosaur2 = new Dinosaur(userInput);
             dinosaurs.Add(dinosaur2);
-            Dinosaur dinosaur3 = new Dinosaur();
+
+            Console.Write("Enter the name of your third dinosaur: ");
+            userInput = Console.ReadLine();
+            Dinosaur dinosaur3 = new Dinosaur(userInput);
             dinosaurs.Add(dinosaur3);
         }
 
-        // member methods
+        // member methods (CAN DO)
     }
 }
