@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace MyRobotsVDinosaurs
 {
     class Herd
-    {        
+    {
         // member variables
 
         // constructor

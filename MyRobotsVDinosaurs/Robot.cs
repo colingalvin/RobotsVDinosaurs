@@ -10,6 +10,11 @@ namespace MyRobotsVDinosaurs
     {
         // member variables
 
+        public string name;
+        public int health;
+        public int powerLevel;
+        public Weapon weapon;
+
         // constructor
 
         // member methods
