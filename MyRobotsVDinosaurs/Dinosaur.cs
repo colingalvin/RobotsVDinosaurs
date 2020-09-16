@@ -26,5 +26,10 @@ namespace MyRobotsVDinosaurs
         }
 
         // member methods
+
+        public void Attack(Robot robot)
+        {
+            robot.health -= attackPower;
+        }
     }
 }

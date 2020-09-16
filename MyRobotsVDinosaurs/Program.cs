@@ -11,6 +11,7 @@ namespace MyRobotsVDinosaurs
         static void Main(string[] args)
         {
             Battlefield battlefield = new Battlefield();
+            battlefield.DoBattle();
         }
     }
 }

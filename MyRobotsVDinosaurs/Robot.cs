@@ -26,5 +26,10 @@ namespace MyRobotsVDinosaurs
         }
 
         // member methods
+
+        public void Attack(Dinosaur dinosaur)
+        {
+            dinosaur.health -= weapon.attackPower;
+        }
     }
 }

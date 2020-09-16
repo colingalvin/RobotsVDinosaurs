@@ -21,5 +21,11 @@ namespace MyRobotsVDinosaurs
         }
 
         // member methods
+
+        public void DoBattle()
+        {
+            herd.dinosaurs[0].Attack(fleet.robots[0]);
+            fleet.robots[0].Attack(herd.dinosaurs[0]);
+        }
     }
 }
