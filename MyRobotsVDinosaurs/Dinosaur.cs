@@ -32,7 +32,7 @@ namespace MyRobotsVDinosaurs
             switch (validUserInput)
             {
                 case "1":
-                    warrior.health -= 10;
+                    warrior.health -= 100;
                     energy -= 10;
                     break;
                 case "2":

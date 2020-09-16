@@ -24,5 +24,19 @@ namespace MyRobotsVDinosaurs
             validatedInput = Convert.ToString(userInputInteger);
             return validatedInput;
         }
+
+        public static bool IsWarriorAlive(Warrior warrior, bool hasEnergy)
+        {
+            if(warrior.energy > 0)
+            {
+                hasEnergy = true;
+                return hasEnergy;
+            }
+            else
+            {
+                Console.WriteLine("This warrior doesn't have any energy to attack. Choose another warrior!");
+                return hasEnergy;
+            }
+        }
     }
 }
