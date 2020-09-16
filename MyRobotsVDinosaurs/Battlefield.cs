@@ -32,8 +32,6 @@ namespace MyRobotsVDinosaurs
                 fleet.robots[1].Attack(herd.dinosaurs[1]);
                 herd.dinosaurs[2].Attack(fleet.robots[2]);
                 fleet.robots[2].Attack(herd.dinosaurs[2]);
-
-                // fleet.robots[0].Attack(herd.dinosaurs[0]);
             }
             while ((herd.dinosaurs[0].health > 0 || herd.dinosaurs[1].health > 0 || herd.dinosaurs[2].health > 0) && (fleet.robots[0].health > 0 || fleet.robots[1].health > 0 || fleet.robots[2].health > 0));
             EndGame();
