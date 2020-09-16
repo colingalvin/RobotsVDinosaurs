@@ -10,10 +10,27 @@ namespace MyRobotsVDinosaurs
     {
         // member variables (HAS A)
 
+        public string name;
+        public List<Warrior> warriors;
+
         // constructor (SPAWN)
+
+        public Army(string name)
+        {
+            this.name = name;
+            warriors = new List<Warrior>();
+        }
 
         // member methods (CAN DO)
 
-        
+        /* public virtual void ChooseAttacker(string userInput)
+        {
+            Console.WriteLine("Choose who will attack: ");
+            userInput = Console.ReadLine();
+            switch(userInput)
+            {
+                
+            }
+        } */
     }
 }

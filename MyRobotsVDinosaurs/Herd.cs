@@ -10,26 +10,25 @@ namespace MyRobotsVDinosaurs
     {
         // member variables (HAS A)
 
-        public List<Dinosaur> dinosaurs = new List<Dinosaur>();
-
         // constructor (SPAWN)
 
-        public Herd() // Contains list of 3 dinosaur objects
+        public Herd(string name) // Contains list of 3 dinosaur objects
+            :base(name)
         {
             Console.Write("Enter the name of your first dinosaur: ");
             string userInput = Console.ReadLine();
             Dinosaur dinosaur1 = new Dinosaur(userInput);
-            dinosaurs.Add(dinosaur1);
+            warriors.Add(dinosaur1);
 
             Console.Write("Enter the name of your second dinosaur: ");
             userInput = Console.ReadLine();
             Dinosaur dinosaur2 = new Dinosaur(userInput);
-            dinosaurs.Add(dinosaur2);
+            warriors.Add(dinosaur2);
 
             Console.Write("Enter the name of your third dinosaur: ");
             userInput = Console.ReadLine();
             Dinosaur dinosaur3 = new Dinosaur(userInput);
-            dinosaurs.Add(dinosaur3);
+            warriors.Add(dinosaur3);
         }
 
         // member methods (CAN DO)

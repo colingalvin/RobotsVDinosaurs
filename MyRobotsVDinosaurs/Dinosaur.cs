@@ -11,8 +11,6 @@ namespace MyRobotsVDinosaurs
         // member variables (HAS A)
 
         public string type;
-        public int health;
-        public int energy;
 
         // constructor (SPAWN)
 
@@ -20,8 +18,6 @@ namespace MyRobotsVDinosaurs
             :base(name) // Runs base constructor with name input, returns to finish constructing rest of dinosaur
         {
             type = "TRex";
-            health = 100;
-            energy = 100;
             // attackPower = 10; (No longer necessary - attack power chosen from list of attacks)
         }
 

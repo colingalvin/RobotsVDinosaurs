@@ -10,8 +10,6 @@ namespace MyRobotsVDinosaurs
     {
         // member variables (HAS A)
 
-        public int health;
-        public int powerLevel;
         public Weapon weapon;
 
         // constructor (SPAWN)
@@ -19,9 +17,7 @@ namespace MyRobotsVDinosaurs
         public Robot(string name)
             :base(name)
         {
-            health = 100;
-            powerLevel = 100;
-            Console.WriteLine($"Weapons:\n  1) Sword (attack power 10)\n  2) Battle Axe (attack power 15)");
+            Console.WriteLine($"Weapons:\n  1) Sword (attack power 5)\n  2) Battle Axe (attack power 10)");
             Console.Write("Choose your weapon: ");
             string userInput = Console.ReadLine();
             switch(userInput)

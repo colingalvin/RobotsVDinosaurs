@@ -17,8 +17,13 @@ namespace MyRobotsVDinosaurs
 
         public Battlefield()
         {
-            herd = new Herd();
-            fleet = new Fleet();
+            Console.Write("Name your herd of dinosaurs: ");
+            string userInput = Console.ReadLine();
+            herd = new Herd(userInput);
+
+            Console.Write("Name your fleet of robots: ");
+            userInput = Console.ReadLine();
+            fleet = new Fleet(userInput);
         }
 
         // member methods (CAN DO)
@@ -27,14 +32,11 @@ namespace MyRobotsVDinosaurs
         {
             do
             {
-                herd.dinosaurs[0].Attack(fleet.robots[0]);
-                fleet.robots[0].Attack(herd.dinosaurs[0]);
-                herd.dinosaurs[1].Attack(fleet.robots[1]);
-                fleet.robots[1].Attack(herd.dinosaurs[1]);
-                herd.dinosaurs[2].Attack(fleet.robots[2]);
-                fleet.robots[2].Attack(herd.dinosaurs[2]);
+                Console.WriteLine($"{herd.name} attack first!");
+                // army chooses who to attack
+                Console.WriteLine($"{fleet.name} attack next!");
             }
-            while ((herd.dinosaurs[0].health > 0 || herd.dinosaurs[1].health > 0 || herd.dinosaurs[2].health > 0) && (fleet.robots[0].health > 0 || fleet.robots[1].health > 0 || fleet.robots[2].health > 0));
+            while ((herd.warriors[0].health > 0 || herd.warriors[1].health > 0 || herd.warriors[2].health > 0) && (fleet.warriors[0].health > 0 || fleet.warriors[1].health > 0 || fleet.warriors[2].health > 0));
             EndGame();
         }
 

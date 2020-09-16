@@ -11,12 +11,16 @@ namespace MyRobotsVDinosaurs
         // member variables (HAS A)
 
         public string name;
+        public int health;
+        public int energy;
 
         // constructor (SPAWN)
 
         public Warrior(string name)
         {
             this.name = name;
+            health = 100;
+            energy = 100;
         }
 
         // member methods (CAN DO)
