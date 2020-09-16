@@ -15,6 +15,12 @@ namespace MyRobotsVDinosaurs
 
         // constructor
 
+        public Weapon()
+        {
+            type = "Sword";
+            attackPower = 10;
+        }
+
         // member methods
     }
 }

@@ -17,6 +17,14 @@ namespace MyRobotsVDinosaurs
 
         // constructor
 
+        public Robot()
+        {
+            name = "Terminator";
+            health = 100;
+            powerLevel = 100;
+            weapon = new Weapon();
+        }
+
         // member methods
     }
 }

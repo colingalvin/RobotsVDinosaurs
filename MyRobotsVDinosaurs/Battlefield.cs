@@ -9,8 +9,16 @@ namespace MyRobotsVDinosaurs
     class Battlefield
     {
         // member variables
+        public Herd herd;
+        public Fleet fleet;
 
         // constructor
+
+        public Battlefield()
+        {
+            herd = new Herd();
+            fleet = new Fleet();
+        }
 
         // member methods
     }
