@@ -27,7 +27,7 @@ namespace MyRobotsVDinosaurs
 
         public virtual void Attack(Warrior warrior)
         {
-            Console.WriteLine($"{0} attacks {warrior}!", name);
+            Console.WriteLine();
         }
     }
 }

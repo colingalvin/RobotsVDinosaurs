@@ -23,14 +23,23 @@ namespace MyRobotsVDinosaurs
 
         // member methods (CAN DO)
 
-        /* public virtual void ChooseAttacker(string userInput)
+        public virtual Warrior ChooseOpponent(Army army) // select from available list of warriors
         {
-            Console.WriteLine("Choose who will attack: ");
-            userInput = Console.ReadLine();
-            switch(userInput)
+            DisplayAvailableWarriors(army); // Pass in attacker army, display list of available warriors that can attack
+            int userInput = int.Parse(Console.ReadLine());
+            Warrior chosenWarrior = army.warriors[userInput-1];
+            return chosenWarrior;
+        }
+
+        public virtual void DisplayAvailableWarriors(Army army) // Takes in army
+        {
+            int i = 1;
+            foreach(Warrior warrior in army.warriors) // Iterates through warriors in army
             {
-                
+                Console.WriteLine($"  {i}) {warrior.name}"); // Writes available warriors
+                i++;
             }
-        } */
+        }
+
     }
 }

@@ -23,20 +23,19 @@ namespace MyRobotsVDinosaurs
 
         // member methods (CAN DO)
 
-        public void Attack(Robot robot)
+        public override void Attack(Warrior warrior)
         {
-            base.Attack(robot);
             Console.WriteLine($"Attacks:\n  1) Bite (deals 10 damage)\n  2) Stomp (deals 5 damage)");
             Console.Write("Choose your attack: ");
             string userInput = Console.ReadLine();
             switch(userInput)
             {
                 case "1":
-                    robot.health -= 10;
+                    warrior.health -= 10;
                     energy -= 10;
                     break;
                 case "2":
-                    robot.health -= 5;
+                    warrior.health -= 5;
                     energy -= 10;
                     break;
             }

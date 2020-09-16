@@ -20,6 +20,7 @@ namespace MyRobotsVDinosaurs
             Console.WriteLine($"Weapons:\n  1) Sword (attack power 5)\n  2) Battle Axe (attack power 10)");
             Console.Write("Choose your weapon: ");
             string userInput = Console.ReadLine();
+            Console.WriteLine();
             switch(userInput)
             {
                 case "1":
@@ -33,10 +34,10 @@ namespace MyRobotsVDinosaurs
 
         // member methods (CAN DO)
 
-        public void Attack(Dinosaur dinosaur)
+        public override void Attack(Warrior warrior)
         {
-            dinosaur.health -= weapon.attackPower;
-            powerLevel -= 10;
+            warrior.health -= weapon.attackPower;
+            energy -= 10;
         }
     }
 }
