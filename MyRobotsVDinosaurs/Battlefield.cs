@@ -40,18 +40,28 @@ namespace MyRobotsVDinosaurs
                 Console.WriteLine($"\nChoose who {attacker.name} will attack:");
                 Warrior defender = herd.ChooseOpponent(fleet); // Displays remaining robots able to be attacked
                 attacker.Attack(defender); // Runs specific attack to each warrior type
+                fleet.CheckForDead(); // check if anyone has no health left
 
-                DisplayGameStats();
-                Console.WriteLine($"\n{fleet.name}, attack!"); // Robots attack second
+                if(fleet.warriors.Count > 0) // If robots still alive
+                {
+                    DisplayGameStats();
+                    Console.WriteLine($"\n{fleet.name}, attack!"); // Robots attack second
 
-                Console.WriteLine($"\nChoose which robot will attack:"); // Same as above
-                attacker = fleet.ChooseOpponent(fleet);
-                Console.WriteLine($"\nChoose who {attacker.name} will attack:");
-                defender = fleet.ChooseOpponent(herd);
-                attacker.Attack(defender);
+                    Console.WriteLine($"\nChoose which robot will attack:"); // Same as above
+                    attacker = fleet.ChooseOpponent(fleet);
+                    Console.WriteLine($"\nChoose who {attacker.name} will attack:");
+                    defender = fleet.ChooseOpponent(herd);
+                    attacker.Attack(defender);
+                    herd.CheckForDead();
+                }
+                else
+                {
+                    EndGame();
+                }
+
             }
-            // loop while any team has a member that is alive
-            while ((herd.warriors[0].health > 0 || herd.warriors[1].health > 0 || herd.warriors[2].health > 0) && (fleet.warriors[0].health > 0 || fleet.warriors[1].health > 0 || fleet.warriors[2].health > 0));
+            // loop while any team has members left in list
+            while (herd.warriors.Count > 0 && fleet.warriors.Count > 0);
             EndGame();
         }
 
@@ -72,7 +82,9 @@ namespace MyRobotsVDinosaurs
 
         public void EndGame()
         {
-            Console.WriteLine("Battle has concluded.");
+            Console.WriteLine("Battle has concluded.\nFinal Stats:\n");
+            DisplayGameStats();
+            Console.ReadLine();
         }
     }
 }

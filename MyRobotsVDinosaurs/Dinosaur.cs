@@ -28,7 +28,8 @@ namespace MyRobotsVDinosaurs
             Console.WriteLine($"Attacks:\n  1) Bite (deals 10 damage)\n  2) Stomp (deals 5 damage)");
             Console.Write("Choose your attack: ");
             string userInput = Console.ReadLine();
-            switch(userInput)
+            string validUserInput = Verification.VerifySwitchCase(userInput, 1, 2);
+            switch (validUserInput)
             {
                 case "1":
                     warrior.health -= 10;

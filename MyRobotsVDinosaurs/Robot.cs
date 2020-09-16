@@ -20,8 +20,9 @@ namespace MyRobotsVDinosaurs
             Console.WriteLine($"Weapons:\n  1) Sword (attack power 5)\n  2) Battle Axe (attack power 10)");
             Console.Write("Choose your weapon: ");
             string userInput = Console.ReadLine();
+            string validUserInput = Verification.VerifySwitchCase(userInput, 1, 2);
             Console.WriteLine();
-            switch(userInput)
+            switch(validUserInput)
             {
                 case "1":
                     weapon = new Weapon("Sword", 5);

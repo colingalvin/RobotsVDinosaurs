@@ -26,8 +26,9 @@ namespace MyRobotsVDinosaurs
         public virtual Warrior ChooseOpponent(Army army) // select from available list of warriors
         {
             DisplayAvailableWarriors(army); // Pass in attacker army, display list of available warriors that can attack
-            int userInput = int.Parse(Console.ReadLine());
-            Warrior chosenWarrior = army.warriors[userInput-1];
+            string userInput = Console.ReadLine();
+            int validUserInput = int.Parse(Verification.VerifySwitchCase(userInput, 1, army.warriors.Count));
+            Warrior chosenWarrior = army.warriors[validUserInput-1];
             return chosenWarrior;
         }
 
@@ -41,5 +42,27 @@ namespace MyRobotsVDinosaurs
             }
         }
 
+        public virtual void CheckForDead()
+        {
+            foreach(Warrior warrior in warriors) // Exception thrown when removed from list
+            {
+                if(warrior.health <= 0)
+                {
+                    Console.WriteLine($"\n{warrior.name} has been killed!");
+                    warriors.Remove(warrior);
+                    Console.WriteLine("Press enter to continue the game");
+                    Console.ReadLine();
+                    break;
+                }
+                if (warrior.health <= 0)
+                {
+                    Console.WriteLine($"\n{warrior.name} has been killed!");
+                    warriors.Remove(warrior);
+                    Console.WriteLine("Press enter to continue the game");
+                    Console.ReadLine();
+                    break;
+                }
+            }
+        }
     }
 }
