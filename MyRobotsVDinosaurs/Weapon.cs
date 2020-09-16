@@ -15,10 +15,10 @@ namespace MyRobotsVDinosaurs
 
         // constructor
 
-        public Weapon()
+        public Weapon(string userInput, int attackPower)
         {
-            type = "Sword";
-            attackPower = 10;
+            this.type = userInput;
+            this.attackPower = attackPower;
         }
 
         // member methods

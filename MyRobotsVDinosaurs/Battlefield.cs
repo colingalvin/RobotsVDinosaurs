@@ -27,8 +27,11 @@ namespace MyRobotsVDinosaurs
             do
             {
                 herd.dinosaurs[0].Attack(fleet.robots[0]);
-                herd.dinosaurs[0].Attack(fleet.robots[1]);
-                herd.dinosaurs[0].Attack(fleet.robots[2]);
+                fleet.robots[0].Attack(herd.dinosaurs[0]);
+                herd.dinosaurs[1].Attack(fleet.robots[1]);
+                fleet.robots[1].Attack(herd.dinosaurs[1]);
+                herd.dinosaurs[2].Attack(fleet.robots[2]);
+                fleet.robots[2].Attack(herd.dinosaurs[2]);
 
                 // fleet.robots[0].Attack(herd.dinosaurs[0]);
             }

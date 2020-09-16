@@ -22,7 +22,18 @@ namespace MyRobotsVDinosaurs
             name = "Terminator";
             health = 100;
             powerLevel = 100;
-            weapon = new Weapon();
+            Console.WriteLine($"Weapons:\n  1) Sword (attack power 10)\n  2) Battle Axe (attack power 15)");
+            Console.Write("Choose your weapon: ");
+            string userInput = Console.ReadLine();
+            switch(userInput)
+            {
+                case "1":
+                    weapon = new Weapon("Sword", 10);
+                    break;
+                case "2":
+                    weapon = new Weapon("Battle Axe", 15);
+                    break;
+            }
         }
 
         // member methods
@@ -30,6 +41,7 @@ namespace MyRobotsVDinosaurs
         public void Attack(Dinosaur dinosaur)
         {
             dinosaur.health -= weapon.attackPower;
+            powerLevel -= 10;
         }
     }
 }
