@@ -33,13 +33,13 @@ namespace MyRobotsVDinosaurs
                 string userInput = Console.ReadLine();
                 int validUserInput = int.Parse(Verification.VerifySwitchCase(userInput, 1, army.warriors.Count));
                 chosenWarrior = army.warriors[validUserInput - 1];
-                hasEnergy = Verification.IsWarriorAlive(chosenWarrior, hasEnergy); // Verify attacker has energy to attack
+                hasEnergy = Verification.WarriorHasEnergy(chosenWarrior, hasEnergy); // Verify attacker has energy to attack
             }
             while (hasEnergy == false);
             return chosenWarrior;
         }
 
-        public Warrior ChooseOpponent(Army army) // select from available list of warriors
+        public Warrior ChooseDefender(Army army) // select from available list of warriors
         {
             DisplayAvailableWarriors(army); // Pass in attacker army, display list of available warriors that can attack
             string userInput = Console.ReadLine();
@@ -58,19 +58,6 @@ namespace MyRobotsVDinosaurs
             }
         }
 
-        public void CheckForDead()
-        {
-            foreach(Warrior warrior in warriors.ToList()) // Exception thrown when removed from list
-            {
-                if(warrior.health <= 0)
-                {
-                    Console.WriteLine($"\n{warrior.name} has been killed!");
-                    warriors.Remove(warrior);
-                    Console.WriteLine("Press enter to continue the game");
-                    Console.ReadLine();
-                    break;
-                }
-            }
-        }
+        
     }
 }

@@ -39,6 +39,7 @@ namespace MyRobotsVDinosaurs
         {
             warrior.health -= weapon.attackPower;
             energy -= 10;
+            // Console.WriteLine($"{name} attacks {warrior.name} for {weapon.attackPower} damage!");
         }
     }
 }

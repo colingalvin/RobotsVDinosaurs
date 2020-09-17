@@ -32,12 +32,14 @@ namespace MyRobotsVDinosaurs
             switch (validUserInput)
             {
                 case "1":
-                    warrior.health -= 100;
+                    warrior.health -= 10;
                     energy -= 10;
+                    // Console.WriteLine($"{name} attacks {warrior.name} for 10 damage!");
                     break;
                 case "2":
                     warrior.health -= 5;
                     energy -= 10;
+                    // Console.WriteLine($"{name} attacks {warrior.name} for 5 damage!");
                     break;
             }
         }

@@ -8,7 +8,7 @@ namespace MyRobotsVDinosaurs
 {
     class Verification
     {
-        public static string VerifySwitchCase(string userInput, int start, int end)
+        public static string VerifySwitchCase(string userInput, int start, int end) // Verify user input is within appropriate bounds
         {
             int userInputInteger;
             string validatedInput;
@@ -25,7 +25,7 @@ namespace MyRobotsVDinosaurs
             return validatedInput;
         }
 
-        public static bool IsWarriorAlive(Warrior warrior, bool hasEnergy)
+        public static bool WarriorHasEnergy(Warrior warrior, bool hasEnergy) // Verify warrior has energy to attack
         {
             if(warrior.energy > 0)
             {
@@ -36,6 +36,21 @@ namespace MyRobotsVDinosaurs
             {
                 Console.WriteLine("This warrior doesn't have any energy to attack. Choose another warrior!");
                 return hasEnergy;
+            }
+        }
+
+        public static void CheckForDead(Army army) // Checks whether any warriors have died during battle
+        {
+            foreach (Warrior warrior in army.warriors.ToList())
+            {
+                if (warrior.health <= 0)
+                {
+                    Console.WriteLine($"\n{warrior.name} has been killed!");
+                    army.warriors.Remove(warrior);
+                    Console.WriteLine("Press enter to continue the game");
+                    Console.ReadLine();
+                    break;
+                }
             }
         }
     }

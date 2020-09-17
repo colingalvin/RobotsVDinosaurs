@@ -18,11 +18,13 @@ namespace MyRobotsVDinosaurs
 
         public Battlefield()
         {
-            Console.Write("Name your herd of dinosaurs: ");
+            Console.WriteLine("\nDinosaurs, assemble your herd!");
+            Console.Write("Name your herd: ");
             string userInput = Console.ReadLine();
             herd = new Herd(userInput);
 
-            Console.Write($"\nName your fleet of robots: ");
+            Console.WriteLine("\nRobots, form your fleet!");
+            Console.Write($"Name your fleet: ");
             userInput = Console.ReadLine();
             fleet = new Fleet(userInput);
         }
@@ -33,20 +35,17 @@ namespace MyRobotsVDinosaurs
         {
             Warrior attacker;
             Warrior defender;
-            do
+            while (herd.warriors.Count > 0 && fleet.warriors.Count > 0) // loop while any team has members left in list
             {
-                if(herd.warriors.Count > 0 && fleet.warriors.Count > 0)
-                {
-                    DisplayGameStats();
-                    Console.WriteLine($"\n{herd.name}, attack!"); // Dinosaurs attack first
+                DisplayGameStats();
+                Console.WriteLine($"\n{herd.name}, attack!"); // Dinosaurs attack first
 
-                    Console.WriteLine($"\nChoose which dinosaur will attack:");
-                    attacker = herd.ChooseAttacker(herd); // Displays remaining dinosaurs able to attack
-                    Console.WriteLine($"\nChoose who {attacker.name} will attack:");
-                    defender = herd.ChooseOpponent(fleet); // Displays remaining robots able to be attacked
-                    attacker.Attack(defender); // Runs specific attack to each warrior type
-                    fleet.CheckForDead(); // check if anyone has no health left
-                }
+                Console.WriteLine($"\nChoose which dinosaur will attack:");
+                attacker = herd.ChooseAttacker(herd); // Displays remaining dinosaurs able to attack
+                Console.WriteLine($"\nChoose who {attacker.name} will attack:");
+                defender = herd.ChooseDefender(fleet); // Displays remaining robots able to be attacked
+                attacker.Attack(defender); // Runs specific attack to each warrior type
+                Verification.CheckForDead(fleet); // check if anyone has no health left
 
                 if(herd.warriors.Count > 0 && fleet.warriors.Count > 0) // If robots still alive
                 {
@@ -56,13 +55,11 @@ namespace MyRobotsVDinosaurs
                     Console.WriteLine($"\nChoose which robot will attack:"); // Same as above
                     attacker = fleet.ChooseAttacker(fleet);
                     Console.WriteLine($"\nChoose who {attacker.name} will attack:");
-                    defender = fleet.ChooseOpponent(herd);
+                    defender = fleet.ChooseDefender(herd);
                     attacker.Attack(defender);
-                    herd.CheckForDead();
+                    Verification.CheckForDead(herd);
                 }
             }
-            // loop while any team has members left in list
-            while (herd.warriors.Count > 0 && fleet.warriors.Count > 0);
             EndGame();
         }
 
@@ -101,6 +98,11 @@ namespace MyRobotsVDinosaurs
             {
                 Console.WriteLine($"No {herd.name} survived.\n\n{fleet.name} win!");
             }
+        }
+
+        public static void WelcomeToGame()
+        {
+            Console.WriteLine("Welcome to Robots v Dinosaurs, where battles of epic proportions will be spoken of until the end of time!");
         }
 
         public void EndGame()
