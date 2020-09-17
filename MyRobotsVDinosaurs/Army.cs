@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyRobotsVDinosaurs
 {
-    class Army
+    abstract class Army
     {
         // member variables (HAS A)
 

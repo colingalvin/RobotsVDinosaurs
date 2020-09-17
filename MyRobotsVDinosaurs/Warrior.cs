@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyRobotsVDinosaurs
 {
-    class Warrior
+    public abstract class Warrior
     {
         // member variables (HAS A)
 
@@ -25,9 +25,6 @@ namespace MyRobotsVDinosaurs
 
         // member methods (CAN DO)
 
-        public virtual void Attack(Warrior warrior)
-        {
-            Console.WriteLine();
-        }
+        public abstract void Attack(Warrior warrior);
     }
 }
